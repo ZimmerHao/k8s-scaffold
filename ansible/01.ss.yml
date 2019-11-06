@@ -1,0 +1,5 @@
+---
+- name: install ss
+  hosts: k8s
+  roles:
+     - ss
