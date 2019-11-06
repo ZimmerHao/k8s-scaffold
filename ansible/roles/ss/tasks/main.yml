@@ -36,8 +36,8 @@
 
 - name: check ss status
   shell: curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
-    args:
-      warn: no
+  args:
+    warn: no
 
 - name: yum install privoxy
   yum:
