@@ -1,26 +1,5 @@
 ---
 
-- name: yum install k8s suite
-  yum:
-    name:
-      - kubelet-{{K8S_SUITE_VERSION}}
-      - kubeadm-{{K8S_SUITE_VERSION}}
-      - kubectl-{{K8S_SUITE_VERSION}}
-    state:
-      present
-    disable_excludes: 'kubernetes'
-
-- name: systemd enable kubelet
-  systemd:
-    name: kubelet
-    enabled: yes
-    masked: no
-
-- name: systemd start kubelet
-  systemd:
-    name: kubelet
-    state: started
-
 - name: create k8s manifests dir
   file:
     path: /etc/kubernetes/manifests
