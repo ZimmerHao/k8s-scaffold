@@ -25,7 +25,7 @@
     mode: "0644"
 
 - name: create keepalived service file
-  copy:
+  template:
     src: keepalived.yaml.j2
     dest: /etc/kubernetes/manifests/keepalived.yaml
     mode: "0644"
