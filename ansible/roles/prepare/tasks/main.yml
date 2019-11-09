@@ -7,10 +7,35 @@
     force: yes
     mode: '0644'
 
+- name: config yum repo
+  copy:
+    src: CentOS-Base.repo
+    dest: /etc/yum.repos.d/CentOS-Base.repo
+    force: yes
+    mode: '0644'
+
+- name: config yum repo
+  copy:
+    src: CentOS-Base.repo
+    dest: /etc/yum.repos.d/CentOS-Base.repo
+    force: yes
+    mode: '0644'
+
 - name: install docker
   shell: curl -fsSL https://get.docker.com/ | sh
   args:
     warn: no
+
+- name: systemd enable docker
+  systemd:
+    name: docker
+    enabled: yes
+    masked: no
+
+- name: systemd start docker
+  systemd:
+    name: docker
+    state: started
 
 - name: load br netfilter
   modprobe:
