@@ -1,0 +1,5 @@
+---
+- name: install control plane
+  hosts: k8s-master
+  roles:
+     - k8s-master

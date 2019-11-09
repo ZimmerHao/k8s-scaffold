@@ -1,0 +1,5 @@
+---
+- name: prepare before install k8s
+  hosts: k8s
+  roles:
+     - prepare
