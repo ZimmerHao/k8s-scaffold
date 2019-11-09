@@ -26,13 +26,6 @@
 
 - name: create keepalived service file
   copy:
-    src: haproxy.yaml
-    dest: /etc/kubernetes/manifests/haproxy.yaml
+    src: keepalived.yaml.j2
+    dest: /etc/kubernetes/manifests/keepalived.yaml
     mode: "0644"
-
-- name: create kube config file
-  template:
-    src: kubeadm-config.yaml.j2
-    dest: /root/kubeadm-config.yaml
-  when:
-    inventory_hostname == "qw-0001"
