@@ -1,0 +1,11 @@
+::1     localhost       localhost.localdomain   localhost6      localhost6.localdomain6
+127.0.0.1       localhost       localhost.localdomain   localhost4      localhost4.localdomain4
+
+172.26.238.117  qw-0001 qw-0001
+172.26.238.122  qw-0002 qw-0002
+172.26.238.121  qw-0003 qw-0003
+172.26.238.124  qw-0004 qw-0004
+172.26.238.123  qw-0005 qw-0005
+172.26.238.120  qw-0006 qw-0006
+172.26.238.118  qw-0007 qw-0007
+172.26.238.119  qw-0008 qw-0008

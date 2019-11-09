@@ -23,8 +23,8 @@
 
 
 - name: create ss systemd unit file
-  template:
-    src: shadowsocks.service.j2
+  copy:
+    src: shadowsocks.service
     dest: /etc/systemd/system/shadowsocks.service
     mode: "0644"
 

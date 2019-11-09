@@ -1,0 +1,59 @@
+---
+
+- name: yum install k8s suite
+  yum:
+    name:
+      - kubelet-{{K8S_SUITE_VERSION}}
+      - kubeadm-{{K8S_SUITE_VERSION}}
+      - kubectl-{{K8S_SUITE_VERSION}}
+    state:
+      present
+    disable_excludes: 'kubernetes'
+
+- name: systemd enable kubelet
+  systemd:
+    name: kubelet
+    enabled: yes
+    masked: no
+
+- name: systemd start kubelet
+  systemd:
+    name: kubelet
+    state: started
+
+- name: create k8s manifests dir
+  file:
+    path: /etc/kubernetes/manifests
+    state: directory
+    mode: "0755"
+
+- name: create haproxy config dir
+  file:
+    path: /etc/haproxy
+    state: directory
+    mode: "0755"
+
+- name: create haproxy config file
+  copy:
+    src: haproxy.cfg
+    dest: /etc/haproxy/haproxy.cfg
+    mode: "0644"
+
+- name: create haproxy service file
+  copy:
+    src: haproxy.yaml
+    dest: /etc/kubernetes/manifests/haproxy.yaml
+    mode: "0644"
+
+- name: create keepalived service file
+  copy:
+    src: haproxy.yaml
+    dest: /etc/kubernetes/manifests/haproxy.yaml
+    mode: "0644"
+
+- name: create kube config file
+  template:
+    src: kubeadm-config.yaml.j2
+    dest: /root/kubeadm-config.yaml
+  when:
+    inventory_hostname == "qw-0001"
