@@ -26,6 +26,12 @@
   args:
     warn: no
 
+- name: docker daemon json file
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+    mode: '0644'
+
 - name: docker proxy config dir
   file:
     path: /etc/systemd/system/docker.service.d
