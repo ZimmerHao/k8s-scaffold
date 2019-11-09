@@ -26,6 +26,18 @@
   args:
     warn: no
 
+- name: docker proxy config dir
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    mode: "0755"
+
+- name: docker proxy config file
+  copy:
+    src: proxy.conf
+    dest: /etc/systemd/system/docker.service.d/proxy.conf
+    mode: '0644'
+
 - name: systemd enable docker
   systemd:
     name: docker
