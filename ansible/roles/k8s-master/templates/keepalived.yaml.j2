@@ -17,8 +17,6 @@ spec:
     env:
     - name: KEEPALIVED_VIRTUAL_IPS
       value: {{ K8S_VIRTUAL_IP }}
-    - name: KEEPALIVED_INTERFACE
-      value: enp3s0
     - name: KEEPALIVED_UNICAST_PEERS
       value: "#PYTHON2BASH:['172.26.238.117', '172.26.238.122', '172.26.238.121']"
     - name: KEEPALIVED_PASSWORD

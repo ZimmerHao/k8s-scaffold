@@ -1,0 +1,30 @@
+执行 systemctl status kubelet 观察到
+
+Nov 11 11:02:53 qw-0001 systemd: Scope libcontainer-23853-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:53 qw-0001 systemd: Scope libcontainer-23853-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:53 qw-0001 systemd: Created slice libcontainer_23853_systemd_test_default.slice.
+Nov 11 11:02:53 qw-0001 systemd: Removed slice libcontainer_23853_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23886-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23886-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Created slice libcontainer_23886_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Removed slice libcontainer_23886_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23892-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23892-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Created slice libcontainer_23892_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Removed slice libcontainer_23892_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23913-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23913-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Created slice libcontainer_23913_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Removed slice libcontainer_23913_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23929-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23929-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Created slice libcontainer_23929_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Removed slice libcontainer_23929_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23936-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Scope libcontainer-23936-systemd-test-default-dependencies.scope has no PIDs. Refusing.
+Nov 11 11:02:59 qw-0001 systemd: Created slice libcontainer_23936_systemd_test_default.slice.
+Nov 11 11:02:59 qw-0001 systemd: Removed slice libcontainer_23936_systemd_test_default.slice.
+
+查到有人反映相似的问题
+
+https://github.com/kubernetes/kubernetes/issues/76531

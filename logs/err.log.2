@@ -1,0 +1,31 @@
+kubeadmin init成功后，发现
+
+
+111 04:58:49.595690       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.595699       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.597083       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.597092       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.597101       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.598322       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.598331       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.598341       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.599525       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.599535       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.599543       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.600879       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.600889       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.600897       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.602300       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.602309       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.602318       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.603585       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.603594       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.603604       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+E1111 04:58:49.604783       1 driver-call.go:267] Failed to unmarshal output for command: init, output: "2019/11/11 04:58:49 Unix syslog delivery error\n", error: invalid character '/' after top-level value
+W1111 04:58:49.604793       1 driver-call.go:150] FlexVolume: driver call failed: executable: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds/uds, args: [init], error: exit status 1, output: "2019/11/11 04:58:49 Unix syslog delivery error\n"
+E1111 04:58:49.604802       1 plugins.go:766] Error dynamically probing plugins: Error creating Flexvolume plugin from directory nodeagent~uds, skipping. Error: invalid character '/' after top-level value
+^C
+
+有人遇到类似的问题，有可能是caclio的问题
+
+https://github.com/projectcalico/pod2daemon/issues/20

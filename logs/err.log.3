@@ -1,0 +1,42 @@
+kubeadm init 一直起不来，发现keepalive的pod是exited
+
+*** CONTAINER_LOG_LEVEL = 3 (info)
+*** Search service in CONTAINER_SERVICE_DIR = /container/service :
+*** link /container/service/keepalived/startup.sh to /container/run/startup/keepalived
+*** link /container/service/keepalived/process.sh to /container/run/process/keepalived/run
+*** link /container/service/keepalived/finish.sh to /container/run/process/keepalived/finish
+*** Set environment for startup files
+*** Environment files will be proccessed in this order :
+Caution: previously defined variables will not be overriden.
+/container/environment/99-default/default.yaml
+
+To see how this files are processed and environment variables values,
+run this container with '--loglevel debug'
+*** Running /container/run/startup/keepalived...
+*** Set environment for container process
+*** Environment files will be proccessed in this order :
+Caution: previously defined variables will not be overriden.
+/container/environment/99-default/default.yaml
+
+To see how this files are processed and environment variables values,
+run this container with '--loglevel debug'
+*** Running /container/run/process/keepalived/run...
+Waiting config file /usr/local/etc/keepalived/keepalived.confok
+Sun Nov 10 13:15:20 2019: Starting Keepalived v2.0.17 (06/25,2019)
+Sun Nov 10 13:15:20 2019: WARNING - keepalived was build for newer Linux 4.18.13, running on Linux 3.10.0-1062.1.2.el7.x86_64 #1 SMP Mon Sep 30 14:19:46 UTC 2019
+Sun Nov 10 13:15:20 2019: Command line: '/usr/local/sbin/keepalived' '-f' '/usr/local/etc/keepalived/keepalived.conf'
+Sun Nov 10 13:15:20 2019:               '--dont-fork' '--log-console' '--log-detail' '--dump-conf'
+Sun Nov 10 13:15:20 2019: Opening file '/usr/local/etc/keepalived/keepalived.conf'.
+Sun Nov 10 13:15:20 2019: Starting VRRP child process, pid=49
+Sun Nov 10 13:15:20 2019: Registering Kernel netlink reflector
+Sun Nov 10 13:15:20 2019: Registering Kernel netlink command channel
+Sun Nov 10 13:15:20 2019: WARNING - default interface enp3s0 doesn't exist
+Sun Nov 10 13:15:20 2019: Opening file '/usr/local/etc/keepalived/keepalived.conf'.
+Sun Nov 10 13:15:20 2019: (Line 6) WARNING - interface enp3s0 for vrrp_instance VI_1 doesn't exist
+Sun Nov 10 13:15:20 2019: WARNING - default user 'keepalived_script' for script execution does not exist - please create.
+Sun Nov 10 13:15:20 2019: Non-existent interface specified in configuration
+Sun Nov 10 13:15:20 2019: Stopped - used 0.000000 user time, 0.000805 system time
+Sun Nov 10 13:15:20 2019: Keepalived_vrrp exited with permanent error CONFIG. Terminating
+Sun Nov 10 13:15:20 2019: Stopped Keepalived v2.0.17 (06/25,2019)
+*** /container/run/process/keepalived/run exited with status 0
+*** Running /container/run/process/keepalived/finish...
