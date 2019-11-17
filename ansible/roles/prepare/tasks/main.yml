@@ -60,6 +60,9 @@
 - name: systemd reload
   shell: systemctl daemon-reload
 
+- name: systemd enable docker
+  shell: systemctl enable docker
+
 - name: systemd start docker
   shell: systemctl restart docker
 
