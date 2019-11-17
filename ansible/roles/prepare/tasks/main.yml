@@ -26,10 +26,12 @@
   shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 - name: update yum
-  shell: yum update
+  shell: yum -y update
 
 - name: install docker
-  shell: yum -y install docker-ce-18.06.2.ce
+  yum:
+    name:
+      - docker-ce-18.06.2.ce
 
 - name: create docker dir
   file:
