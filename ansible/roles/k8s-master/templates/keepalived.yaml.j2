@@ -16,7 +16,7 @@ spec:
     image: docker.io/osixia/keepalived:2.0.17
     env:
     - name: KEEPALIVED_VIRTUAL_IPS
-      value: "#PYTHON2BASH:['172.26.238.126']"
+      value: "#PYTHON2BASH:['{{K8S_VIRTUAL_IP}}']"
     - name: KEEPALIVED_UNICAST_PEERS
       value: "#PYTHON2BASH:['172.26.238.117']"
     - name: KEEPALIVED_PASSWORD
