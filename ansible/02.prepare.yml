@@ -1,5 +1,5 @@
 ---
 - name: prepare before install k8s
-  hosts: k8s
+  hosts: "{{ hosts | default('all') }}"
   roles:
      - prepare
