@@ -14,6 +14,13 @@
     force: yes
     mode: '0644'
 
+- name: config epel yum repo
+  copy:
+    src: epel.repo
+    dest: /etc/yum.repos.d/epel.repo
+    force: yes
+    mode: '0644'
+
 - name: install docker required packages
   yum:
     name:
