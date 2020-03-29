@@ -13,4 +13,12 @@ vim values.yaml
 kubectl create secret tls pushgateway-tls --key ./pushgateway.key --cert ./pushgateway.pem -n default
 ```
 
-##
+## install pushgateway
+```
+helm install prometheus-pushgateway -n default -f values.yaml .
+```
+
+## upgrade pushgateway
+```
+helm upgrade -f values.yaml prometheus-pushgateway stable/prometheus-pushgateway -n default
+```
