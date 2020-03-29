@@ -1,0 +1,37 @@
+apiVersion: v1
+data:
+  Corefile: |
+    .:53 {
+        hosts {
+          172.26.238.117 qw-0001
+          172.26.238.122 qw-0002
+          172.26.238.121 qw-0003
+          172.26.238.124 qw-0004
+          172.26.238.123 qw-0005
+          172.26.238.120 qw-0006
+          172.26.238.118 qw-0007
+          fallthrough
+        }
+        errors
+        health
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2019-11-19T02:07:53Z"
+  name: coredns
+  namespace: kube-system
+  resourceVersion: "26785"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/coredns
+  uid: 1a40720e-f0be-4ccb-90f5-50c304fb453b

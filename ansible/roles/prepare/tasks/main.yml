@@ -14,6 +14,13 @@
     force: yes
     mode: '0644'
 
+- name: config epel yum repo
+  copy:
+    src: epel.repo
+    dest: /etc/yum.repos.d/epel.repo
+    force: yes
+    mode: '0644'
+
 - name: install docker required packages
   yum:
     name:
@@ -25,8 +32,13 @@
 - name: add docker repo
   shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
+- name: update yum
+  shell: yum -y update
+
 - name: install docker
-  shell: yum update && yum install docker-ce-18.06.2.ce
+  yum:
+    name:
+      - docker-ce-18.06.2.ce
 
 - name: create docker dir
   file:
@@ -55,17 +67,15 @@
 - name: systemd reload
   shell: systemctl daemon-reload
 
+- name: systemd enable docker
+  shell: systemctl enable docker
+
 - name: systemd start docker
   shell: systemctl restart docker
 
 - name: load br netfilter
   modprobe:
     name: br_netfilter
-    state: present
-
-- name: load bridge
-  modprobe:
-    name: bridge
     state: present
 
 - name: create k8s conf

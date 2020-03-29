@@ -16,13 +16,11 @@ spec:
     image: docker.io/osixia/keepalived:2.0.17
     env:
     - name: KEEPALIVED_VIRTUAL_IPS
-      value: {{ K8S_VIRTUAL_IP }}
+      value: "#PYTHON2BASH:['{{K8S_VIRTUAL_IP}}']"
     - name: KEEPALIVED_UNICAST_PEERS
-      value: "#PYTHON2BASH:['172.26.238.117', '172.26.238.122', '172.26.238.121']"
+      value: "#PYTHON2BASH:['172.26.238.117']"
     - name: KEEPALIVED_PASSWORD
       value: d0cker
-    - name: KEEPALIVED_PRIORITY
-      value: "{{ KEEPALIVED_PRIORITY }}"
     - name: KEEPALIVED_ROUTER_ID
       value: "51"
     resources:

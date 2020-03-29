@@ -1,5 +1,5 @@
 ---
 - name: install ss
-  hosts: k8s
+  hosts: "{{ hosts | default('all') }}"
   roles:
      - ss
